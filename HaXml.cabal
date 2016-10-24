@@ -1,5 +1,5 @@
 name:		HaXml
-version:	1.25.3
+version:	1.26
 license:	LGPL
 license-file:	COPYRIGHT
 author:		Malcolm Wallace <Malcolm.Wallace@me.com>
@@ -65,6 +65,8 @@ library
   if impl(ghc)
     exposed-modules:
         Text.XML.HaXml.Schema.Schema
+
+  other-modules: Paths_HaXml
   hs-source-dirs: src
   build-depends: polyparse >= 1.10, filepath
   if flag(splitBase)
@@ -76,14 +78,12 @@ library
   else
     build-depends: base < 2 || >= 3, bytestring
   extensions: CPP, ExistentialQuantification
-  cpp-options: -DVERSION="\"1.25.3\""
   nhc98-options: -K10M
 
 Executable Canonicalise
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: Canonicalise.hs
   build-depends: base, HaXml, pretty
 
@@ -91,54 +91,47 @@ Executable CanonicaliseLazy
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: CanonicaliseLazy.hs
   build-depends: base, HaXml, pretty
-  
+
 Executable Xtract
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: Xtract.hs
   build-depends: base, HaXml, pretty
-  
+
 Executable Validate
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: Validate.hs
   build-depends: base, HaXml
-  
+
 Executable MkOneOf
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: MkOneOf.hs
   build-depends: base, HaXml
-  
+
 Executable DtdToHaskell
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: DtdToHaskell.hs
   build-depends: base, HaXml, pretty
-  
+
 Executable XsdToHaskell
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: XsdToHaskell.hs
   build-depends: base, HaXml, pretty, polyparse, directory
-  
+
 Executable FpMLToHaskell
   GHC-Options: -Wall
   Extensions:  CPP
   Hs-Source-Dirs: src/tools
-  cpp-options: -DVERSION="\"1.25.3\""
   Main-Is: FpMLToHaskell.hs
   build-depends: base, HaXml, pretty, polyparse, directory

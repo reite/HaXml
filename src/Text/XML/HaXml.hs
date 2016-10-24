@@ -1,8 +1,4 @@
-{-# LANGUAGE CPP #-}
-#define dummy	-- just to ensure cpp gets called on this file
--- | This is just a convenient way of bunching the XML combinators
---   together with some other things you are likely to want at the
---   same time.
+
 module Text.XML.HaXml
   ( module Text.XML.HaXml.Types
   , module Text.XML.HaXml.Combinators
@@ -15,7 +11,6 @@ module Text.XML.HaXml
   , module Text.XML.HaXml.Verbatim
   , module Text.XML.HaXml.Escape
   , render
-  , version
   ) where
 
 import Text.XML.HaXml.Types
@@ -25,13 +20,8 @@ import Text.XML.HaXml.Pretty      (element)
 import Text.XML.HaXml.Html.Generate
 import Text.XML.HaXml.Html.Parse  (htmlParse)
 import Text.XML.HaXml.Validate    (validate)
-import Text.XML.HaXml.Wrappers    (fix2Args,processXmlWith)
+import Text.XML.HaXml.Wrappers    (fix2Args,processXmlWith,version)
 import Text.XML.HaXml.Verbatim
 import Text.XML.HaXml.Escape
 
 import Text.PrettyPrint.HughesPJ  (render)
-
--- | The version of the library.
-version :: String
-version  = VERSION
-		-- expect cpp to fill in value
